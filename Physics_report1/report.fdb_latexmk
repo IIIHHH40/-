@@ -1,0 +1,14 @@
+# Fdb version 4
+["dvipdf"] 0 "report.dvi" "report.pdf" "report" 0 -1
+  "report.dvi" 0 -1 0 "latex"
+  (generated)
+  "report.pdf"
+  (rewritten before read)
+["latex"] 0 "c:/Users/harut/OneDrive/aerospace/Physics_report1/report.tex" "report.dvi" "report" 0 -1
+  "c:/Users/harut/OneDrive/aerospace/Physics_report1/report.tex" 0 -1 0 ""
+  "report.aux" 0 -1 0 "latex"
+  (generated)
+  "report.aux"
+  "report.dvi"
+  "report.log"
+  (rewritten before read)

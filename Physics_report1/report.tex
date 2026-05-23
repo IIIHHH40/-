@@ -11,7 +11,6 @@
 
 \begin{document}
 \maketitle
-
 \tableofcontents
 \clearpage
 
@@ -91,35 +90,136 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{e=2,W=4.5.JPG}
-    \caption{4点曲げ試験装置の概略図}
+    \caption{e=2,W=4.5(明)}
     \label{fig:bending_machine}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{e=3,W=4.5.JPG}
-    \caption{4点曲げ試験装置の概略図}
+    \caption{e=3,W=4.5(明)}
     \label{fig:bending_machine}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{e=3,W=6.5.JPG}
-    \caption{4点曲げ試験装置の概略図}
+    \caption{e=3,W=6.5(明)}
     \label{fig:bending_machine}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{e=5,W=4.5.JPG}
-    \caption{4点曲げ試験装置の概略図}
+    \caption{e=5,W=4.5(明)}
     \label{fig:bending_machine}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{暗 e=3,W=4.5.JPG}
-    \caption{4点曲げ試験装置の概略図}
+    \caption{e=3,W=4.5(暗)}
     \label{fig:bending_machine}
 \end{figure}
-これらの図から
-e=3,W=4.5について暗視野と明視野を比較すると
+これらの図から\\
+今回の課題においては上下のNmaxを測定しCの値を求めた。\\
+e,Wの値と上のしま次数によって求められるCの値と、下のしま次数によってもとめられるCの値の関係は以下の図のようになった。\\
+%excelの図を挿入する
+%実際の値を探してきて、比較するとベスト化も
+これらの値に誤差がある理由としては以下のことが考えられる\\
+1.画像上ではしまが幅をもってしまうため正確なしまの位置を測定するのが難しいこと\\
+%補正できてるかも
+2.中立面が梁の完全な中心とはなっていないこと。\\
+3.支点の三次元的なずれから3次元的な力が加わっている可能性があること。
+
+%荷重条件によって縞模様がどのように変化するかを考察する。
+e=2,W=4.5の光弾性画像と、e=3,W=4.5の光弾性画像を比較するとe=3,W=4.5の条件においてより$N_max$の値が大きくなっていることがわかる。\\
+また、e=3,W=4.5の光弾性画像とe=3,W=6.5の光弾性画像を比較するとe=3,W=6.5の条件においてより$N_max$の値が大きくなっていることがわかる。これは$N_max$の公式よりわかる。\\
+また課題2における荷重条件を検討するにあたっては\\
+%1,,,2のようにフラグ付け
+1.荷重が加わる点についてはしま模様が歪んでいるため中心付近(つまりeが大きい)で荷重が加わるのは好ましくない。\\
+2.一方でe,Wの値が小さい状態ではNmaxに大きな誤差を含んでおり、好ましくない\\
+3.e,Wが大きすぎる場合、切り欠き部分に多くの重なりを含むため適切に値を読むことができない。\\
+これらのことを考慮した結果、e=3,W=6.5を採用した。\\
+%暗視野と明視野についてそれぞれの利点と問題点の考察
+%多分もっといい考察できる。
+e=3,W=4.5について暗視野と明視野を比較するとそれぞれの利点、問題点は以下のようになった。\\
+暗視野の利点はN=0,1,2,,,にしまが現れるため中心軸の位置が分かりやすい点である。一方で問題点としては試験片の境界が暗いため端の値については正確な観測が難しい点があげられる\\
+明視野の利点は背景が明るいため試験片の端のしまが見やすい点である。問題点としては本実験では中心軸が試験片の完全な中心ではないのでN=1/2を探すのがより難しくなっている。\\
+
+課題2\\
+切り欠きの半径ρ=1,2,4,8をもつ切り欠き付きの試験片に対して課題1において検討した荷重条件(e=3,W=6.5)を課し光弾性画像を撮影した。この際明視野で実験を行った。\\
+この時ρと上限の$N_max$と下限の$N_max$の関係は以下のようになった。
+\begin{table}[]
+\begin{tabular}{lll}
+切欠き半径(m) & Nmax(下限) & Nmax(上限) \\
+8.00E-03 & 4        & 4.3      \\
+4.00E-03 & 4.4      & 4.4      \\
+2.00E-03 & 5.4      & 5.5      \\
+1.00E-03 & 5.6      & 7       
+\end{tabular}
+\end{table}
+
+またρ=1,2,4,8を半径としてもつ切り欠き付き試験片における光弾性画像は以下のようになった。\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{ρ=1.JPG}
+    \caption{ρ=1}
+    \label{fig:bending_machine}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{ρ=2.JPG}
+    \caption{ρ=2}
+    \label{fig:bending_machine}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{ρ=4.JPG}
+    \caption{ρ=4}
+    \label{fig:bending_machine}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{ρ=8.JPG}
+    \caption{ρ=8}
+    \label{fig:bending_machine}
+\end{figure}
+ことのき応力集中係数$K$は以下のような式となるため
+\[
+  K = \frac{\sigma_{x,p}}{\sigma_{x,\text{nom}}}
+\]
+K(下限)とK(上限)の値は以下のようになった。\\
+\begin{table}[]
+\begin{tabular}{lll}
+切欠き半径(m) & K(下限)    & K(上限)    \\
+8.00E-03 & 1.417722 & 1.524051 \\
+4.00E-03 & 1.559494 & 1.559494 \\
+2.00E-03 & 1.913924 & 1.949367 \\
+1.00E-03 & 1.98481  & 2.481013
+\end{tabular}
+\end{table}
+この結果を下図のPetersonの応力集中係数と比較すると以下の図のようになる
+%これスクショでいいの?
+%pngでもいいの？
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{Peterson_compare.png}
+    \caption{実験結果とPetersonの応力集中係数との比較}
+    \label{fig:bending_machine}
+\end{figure}
+%現状の測定方法の問題点、課題、改善すべき点
+%誤差は%で出す
+この図から切り欠きの半径$ρ$が小さくなるほど応力集中係数Kがおおきくなることが今回の実験から確認できた。\\
+一方で下限、上限ともに誤差が存在し、この実験の問題点として以下のことが挙げられる\\
+・中心軸が梁の中心ではなかったこと
+・梁の切り欠きの境界においてはしまが多く重なっており正確に読み取ることが難しかったこと。\\
+梁の切り欠きの境界においてしまが多く重なっていたことによってρ=1のとの大きな誤差が生まれたと考えられる。\\
+この実験の課題として以下のことが挙げられる\\
+その他改善すべき点として\\
+
+課題3\\
+FreeCADの有限要素解析機能を用いて両側半円欠き付き梁の応力解析を行った。
+
+
+
+
 
 
 \section{総括}

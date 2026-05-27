@@ -5,9 +5,6 @@
 \usepackage{enumitem} 
 \usepackage{float}
 
-%レポート作成に関する注意
-%レポートには実験の目的、内容、実験方法、実験結果、結果に関する吟味・考察、予想との乖離があるならその原因の考察を自分の言葉でまとめる
-
 \title{固体力学の実験}
 \author{京都大学工学部物理工学科 1025363386 伊藤温大}
 \date{\today}
@@ -15,342 +12,379 @@
 \begin{document}
 \maketitle
 
-% --------------------------------------------------
-% 目次
-\tableofcontents
-\clearpage
-% --------------------------------------------------
-
 \section{はじめに}
-本レポートでは超音波計測による弾性波伝搬速度と弾性係数の評価についてその結果、実験課題について報告する。
+本レポートでは、固体力学に関する光弾性法による応力場の可視化と応力集中係数の評価について、その結果および実験課題について報告する。
 
-% ==================================================
-% 実験2（超音波計測）
-% ==================================================
-\section{超音波計測による弾性波伝搬速度と弾性係数の評価}
-\section{実験方法}
-\subsubsection*{実験1}
-金属ブロックに縦波および、横波の超音波を送信、受信することによって測定波形から伝搬速度を求めた。
-\begin{itemize}[nosep]
-    \item 超音波送受信装置
-    \item トランスデューサー
-    \item 音響結合媒質
-    \item 試験片
-    \item ディジタルオシロスコープ
-    \item パーソナルコンピューター
-\end{itemize}
-具体的に試験片として以下の材料を用いた。
-\begin{itemize}[nosep]
-    \item 機械構造用炭素鋼鋼材 S25C
-    \item 機械構造用炭素鋼鋼材 S45C
-    \item アルミニウム合金 A5052
-    \item アルミニウム合金 A2024(超ジュラルミン)
-\end{itemize}
-この際、以下のような実験装置を使用した。
+\section{光弾性法による応力場の可視化と応力集中係数の評価}
+
+\subsection{目的}
+曲げ応力を受ける梁の干渉縞の測定を行い、切り欠き部における応力集中係数を評価する。それによって光弾性法の原理を理解する。
+
 \subsection{実験方法}
-1. 試験片の寸法を測定し、記録した。この時同様の材質について4回測定し、平均をとった。記録した試験片の寸法は以下の表のようになった。
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-    \hline
-    S25C & S45C & A5052 & A2025 \\ \hline
-    9.882 & 9.873 & 9.98 & 10.061 \\ \hline
-    \end{tabular}
-\end{table}
-2. 試験片を厚さ方向に複数回伝搬した波形について、それぞれの反射波の到着時刻を求めた。この時S25Cの縦波について初めの波は超音波送受信装置から出た波を観測してしまっていると考えられる。
-4.受診した反射波形に含まれる周波数成分を、高速フーリエ変換を行うことによって確認した。\\
-この際以下の手順を行った。
-・受信波形のうち、単一パルスだけを対象とし、他のエコーを表すデータはすべて0に置き換えた。また時間データ数が2のべき乗となるように必要な個数だけ末尾に0データを加えた。\\
-・このデータに対して高速フーリエ変換を行い、結果として出力される複素数について絶対値を計算しグラフ化した。この際データの周波数間隔はテキスト(4-6)\begin{equation}
-\Delta f = \frac{f_s}{N} = \frac{1}{NT_s} = \frac{1}{T}
-\end{equation}によって求めた。
-今回はA2024の縦波、A2024の横波それぞれについて高速フーリエ変換を行った。
-実験2
-1.送信トランスデューサと受信トランスデューサの間隔を変化させながら、波の到達時刻を調べた
-この時送信トランスデューサと受信トランスデューサの間隔は2,4,6,8cmについてそれぞれ波の到達時刻を調べた。
+以下の手順で測定を行った。
 
-\section{実験結果}
-縦波について、受信したデータはS25Cから順に以下図のようになった。
+\subsubsection*{課題1: 基準試験片の光弾性画像と縞次数の解析}
+切り欠きの無い基準試験片に対して錘の質量、支点位置、視野の明暗を調節し、光弾性画像を撮影することで縞次数を解析した。
+
+実験に際して以下の器具を使用した。図\ref{fig:specimen}に示すような、ポリカーボネート製の梁を試験片として使用した。図の上から切り欠きなし、切り欠きの半径 $\rho=1, 2, 4, 8$ mm である。
+
 \begin{figure}[H]
     \centering
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{S25C縦波.png}
-        \caption{S25C 縦波}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{S45C縦波.png}
-        \caption{S45C 縦波}
-    \end{minipage}
-    \\ \vspace{5mm}
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{A5052縦波.png}
-        \caption{A5052 縦波}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{A2024.png}
-        \caption{A2024 縦波}
-    \end{minipage}
+    \includegraphics[height=6cm]{実験試験片.jpg}
+    \caption{試験片（上から切り欠きなし、切り欠きの半径 $\rho=1, 2, 4, 8$ mm）}
+    \label{fig:specimen}
 \end{figure}
-この反射波の到着時刻を求める際には波の下限のピークの値を到着時刻として統一した。この時縦波における到着時刻はS25Cから順に以下の表のようになった。
-\begin{table}[H]
-    \centering
-    \caption{S25C 縦波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    1つ目 & 0.00000274 & 0.019764 \\
-    2つ目 & 0.00000606 & 0.039528 \\
-    3つ目 & 0.0000094  & 0.059292 \\
-    4つ目 & 0.00001272 & 0.079056 \\
-    5つ目 & 0.00001606 & 0.09882  \\ \hline
-    \end{tabular}
-\end{table}
 
-\begin{table}[H]
-    \centering
-    \caption{S45C 縦波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    1つ目 & 0.00000274 & 0.019746 \\
-    2つ目 & 0.00000608 & 0.039492 \\
-    3つ目 & 0.00000944 & 0.059238 \\
-    4つ目 & 0.00001278 & 0.078984 \\ \hline
-    \end{tabular}
-\end{table}
+また、図\ref{fig:bending_machine}の左にある曲げ試験装置を用いて4点曲げ試験を行った。この装置では直径 10 mm のピン4本で試験片を支持し、上部から錘をのせることで荷重を作用させる。このとき錘の質量を $W$ [kg]、支点位置を $e$ [cm] として $W, e$ を変化させ、実験を行った。
 
-\begin{table}[H]
-    \centering
-    \caption{A5052 縦波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    1つ目 & 0.0000025  & 0.01996 \\
-    2つ目 & 0.00000558 & 0.03992 \\
-    3つ目 & 0.00000884 & 0.05988 \\ \hline
-    \end{tabular}
-\end{table}
+実験で使用した光学系は以下のとおりである。
+\begin{enumerate}[label=\arabic*.]
+    \item He-Ne レーザー
+    \item レーザービームエキスパンダ
+    \item 平凹レンズ
+    \item 平凸レンズ
+    \item CMOSカメラ
+\end{enumerate}
 
-\begin{table}[H]
-    \centering
-    \caption{A2024 縦波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    1つ目 & 0.00000264 & 0.020122 \\
-    2つ目 & 0.00000578 & 0.040244 \\
-    3つ目 & 0.00000892 & 0.060366 \\
-    4つ目 & 0.00001206 & 0.080488 \\
-    6つ目 & 0.0000152  & 0.10061  \\
-    7つ目 & 0.0000185  & 0.120732 \\ \hline
-    \end{tabular}
-\end{table}
+これらの全体像は以下のようである。
 
-このとき伝搬速度は以下の表のようになった。(m/s)
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-    \hline
-    S25C & S45C & A5052 & A2025 \\ \hline
-    5935.1 & 5897.8 & 6294.8 & 6361.5 \\ \hline
-    \end{tabular}
-\end{table}
-横波について、観測したオシロスコープの値は以下の図のようになった。
 \begin{figure}[H]
     \centering
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{S25C 横波.png}
-        \caption{S25C 横波}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{S45C横波.png}
-        \caption{S45C 横波}
-    \end{minipage}
-    \\ \vspace{5mm}
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{A5052横波.png}
-        \caption{A5052 横波}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{A2024横波.png}
-        \caption{A2024 横波}
-    \end{minipage}
-\end{figure}
-到着時刻はS25Cから順に以下の表のようになった。この際、1, 2回目などの波が不安定になっている点については考慮せず、安定に観測できている波について観測した。この時横波における到着時刻は波の下限のピークの値を到着時刻として統一した。
-
-\begin{table}[H]
-    \centering
-    \caption{S25C 横波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    4つ目 & 2.45E-05 & 0.079056 \\
-    5つ目 & 3.05E-05 & 0.09882  \\
-    6つ目 & 3.67E-05 & 0.118584 \\
-    7つ目 & 4.27E-05 & 0.138348 \\ \hline
-    \end{tabular}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \caption{S45C 横波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    3つ目 & 1.86E-05 & 0.059238 \\
-    4つ目 & 2.47E-05 & 0.078984 \\
-    5つ目 & 3.1E-05  & 0.09873  \\
-    6つ目 & 3.72E-05 & 0.118476 \\ \hline
-    \end{tabular}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \caption{A5052 横波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    2つ目 & 6.25E-06 & 0.03992 \\
-    3つ目 & 1.26E-05 & 0.05988 \\
-    4つ目 & 1.88E-05 & 0.07984 \\ \hline
-    \end{tabular}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \caption{A2024 横波の到着時刻}
-    \begin{tabular}{lcc}
-    \hline
-    個数 & 到着時刻 & 総距離 \\ \hline
-    2つ目 & 6.4E-06  & 0.040244 \\
-    4つ目 & 1.91E-05 & 0.080488 \\
-    5つ目 & 2.56E-05 & 0.10061  \\ \hline
-    \end{tabular}
-\end{table}
-
-これによって伝搬速度は以下のようになった。
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-    \hline
-    S25C & S45C & A5052 & A2024 \\ \hline
-    3245.3 & 3189.9 & 3180.9 & 3154.6 \\ \hline
-    \end{tabular}
-\end{table}
-3. 実験1によって導かれる各材料のヤング率とポアソン比を求めると以下の表のようになった。
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcc}
-    \hline
-    材料 & $E$ & $\nu$ \\ \hline
-    S25C  & 211.4107036 & 0.286745546 \\
-    S45C  & 205.2874965 & 0.293253799 \\
-    A5052 & 75.27726346 & 0.328543453 \\
-    A2024 & 74.50623148 & 0.336952484 \\ \hline
-    \end{tabular}
-\end{table}
-
-その結果は以下のようである。
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{高速フーリエ変換A2024縦波.png}
-    \caption{ρ=1}
+    \includegraphics[width=12cm]{実験全体写真2.jpg}
+    \caption{4点曲げ試験装置の概略図}
     \label{fig:bending_machine}
 \end{figure}
+
+\subsubsection*{課題2}
+切り欠きの半径 $\rho=1, 2, 4, 8$ をもつ切り欠き付きの試験片に対して、課題1において検討した荷重条件 ($e=3, W=6.5$) を課し光弾性画像を撮影した。この際、明視野で実験を行った。
+
+\subsubsection*{課題3}
+FreeCADの有限要素解析機能を用いて両側半円欠き付き梁の応力解析を行った。
+
+\subsection{実験結果}
+
+\subsubsection*{課題1}
+以下が実際の実験における光弾性画像である。
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm]{高速フーリエ変換A2024横波.png}
-    \caption{ρ=1}
-    \label{fig:bending_machine}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{e=2,W=4.5.JPG}
+        \caption{$e=2, W=4.5$ (明)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{e=3,W=4.5.JPG}
+        \caption{$e=3, W=4.5$ (明)}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{e=3,W=6.5.JPG}
+        \caption{$e=3, W=6.5$ (明)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{e=5,W=4.5.JPG}
+        \caption{$e=5, W=4.5$ (明)}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{暗e=3,W=4.5.JPG}
+        \caption{$e=3, W=4.5$ (暗)}
+    \end{minipage}
 \end{figure}
-この時観測した波は以下のようになった。
-この時、それぞれの材料におけるそれぞれの間隔の到達時刻は以下のようになった。
-S25C
-\begin{table}[]
-\begin{tabular}{ll}
-到達時刻       & 距離(m) \\
-0.00002215 & 0.02  \\
-0.0000287  & 0.04  \\
-0.0000352  & 0.06  \\
-0.0000422  & 0.08 
-\end{tabular}
-\end{table}
-S45C
-\begin{table}[]
-\begin{tabular}{ll}
-0.00002175 & 0.02 \\
-0.00002835 & 0.04 \\
-0.0000348  & 0.06 \\
-0.00004215 & 0.08
-\end{tabular}
-\end{table}
-A5052
-\begin{table}[]
-\begin{tabular}{ll}
-0.0000225  & 0.02 \\
-0.00002915 & 0.04 \\
-0.00003615 & 0.06 \\
-0.00004275 & 0.08
-\end{tabular}
-\end{table}
-A2024
-\begin{table}[]
-\begin{tabular}{ll}
-到達時刻     & 距離   \\
-2.27E-05 & 0.02 \\
-2.93E-05 & 0.04 \\
-3.62E-05 & 0.06 \\
-4.36E-05 & 0.08
-\end{tabular}
-\end{table}
-2.トランスデューサ間の間隔と到達時刻との関係から求めた伝搬速度と実験1における横波速度とPoisson比によるReyleigh波の速度との関係は以下のようになった。
-\begin{table}[]
-\begin{tabular}{llllll}
-      & Poisson比 & 横波速度   & Rayleigh波(実験1) & Rayleigh波(実測値) & 誤差(\%)   \\
-S25C  & 0.2868   & 3245.3 & 3004.238       & 2959.8         & 1.479173 \\
-S45C  & 0.2933   & 3189.9 & 2956.068       & 2953.9         & 0.073331 \\
-A5052 & 0.3285   & 3180.9 & 2964.019       & 2951           & 0.439247 \\
-A2024 & 0.337    & 3154.6 & 2943.287       & 2869.8         & 2.496754
-\end{tabular}
-\end{table}
-\section{考察}
-高速フーリエ変換の結果よりA2024縦波においては5MHZにおいてピークをとっていることがわかる。
-またA2024横波においては0.4,1.1ほどでピークを持っていることが分かる。
 
+今回の課題においては上下の $N_{\text{max}}$ を測定した。この測定値と配布テキストで導いた(1-23)式にある、
+\[
+  N_{\text{max}} = \frac{3CWe}{\lambda h^2}
+\]
+によって光弾性係数 $C$ の値を求めた（ここで、$N_{\text{max}}$ は縞次数、$W$ は荷重、$\lambda$ はレーザー光の波長、$h$ は厚みである）。この時、中立面から上を $N(\text{上})$、中立面より下を $N(\text{下})$ とし、撮影した画像においてコンピュータ上で倍率を100\%としモニター上の大きさを測定した。その後、中立面より上の最大の大きさの $N_{\text{max}}$ の値をモニター上の1目盛分の大きさで割ることによって、
+\[
+  \text{縞次数 } N_{\text{max}} = \frac{\text{最大の大きさ}}{\text{1目盛分の長さ}}
+\]
+として縞次数を求めた。また、上の縞次数に対する $C_{\text{Br}}$ の平均は 67.0、下の縞次数に対する $C_{\text{Br}}$ の平均は 90.376 となった。
 
-この実験結果から金属ブロックに超音波を当てることによってヤング率やポアソン比を求めることができた。
-また実験1におけるRayleigh波と実測値としてのRayleigh波の誤差がおおよそ2\%以下であることから比較的良い精度で実験ができたといえる。
-\subsubsection*{考察課題}
-1. 超音波測定に用いた4種類の材料に対して、ヤング率/密度として定義されている比剛性を求めると、、、
-、、、、、、
+$e, W$ の値と上の縞次数によって求められる $C$ の値と、下の縞次数によってもとめられる $C$ の値の関係は以下の表のようになった。
 
-2. 超音波測定に用いた炭素鋼S25CとS45Cの違い、およびアルミニウム合金A5052とA2024の違いを図書で調べると、、、、、、、
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llllllllllll}
+    \hline
+    明暗 & $W$ [kg] & $e$ [cm] & $N_{\text{max}}$(上) & $N_{\text{max}}$(下) & 1目盛の長さ [mm] & $N_{\text{max}}$(上) & $N_{\text{max}}$(下) & $C$(上) [m$^2$/N] & $C$(下) [m$^2$/N] & $C_{\text{Br}}$(上) [Brewster] & $C_{\text{Br}}$(下) [Brewster] \\ \hline
+    明 & 4.5 & 2 & 4.3 & 6.8 & 6.2 & 1.193548 & 1.596774 & 6.42E-11 & 8.59E-11 & 64.22 & 85.92 \\
+    明 & 4.5 & 3 & 5.5 & 7.4 & 4.2 & 1.809524 & 2.261905 & 6.49E-11 & 8.11E-11 & 64.91 & 81.14 \\
+    明 & 4.5 & 5 & 6.7 & 10.3 & 2.5 & 3.180000 & 4.620000 & 6.84E-11 & 9.94E-11 & 68.45 & 99.44 \\
+    明 & 6.5 & 3 & 6.5 & 10.5 & 2.8 & 2.821429 & 4.250000 & 7.01E-11 & 1.06E-10 & 70.07 & 105.55 \\
+    暗 & 6.5 & 3 & 7.6 & 9.0 & 2.8 & 2.714286 & 3.214286 & 6.74E-11 & 7.98E-11 & 67.41 & 79.83 \\ \hline
+    \end{tabular}
+    }
+\end{table}
 
-\subsection{結果}
+\subsubsection*{課題2}
+この時、$\rho$ と上限の $N_{\text{max}}$ と下限の $N_{\text{max}}$ の関係は以下のようになった。
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lrr}
+\hline
+切欠き半径 $\rho$ [m] & $N_{\text{max}}$(下限) & $N_{\text{max}}$(上限) \\ \hline
+8.00E-03 & 4.0 & 4.3 \\
+4.00E-03 & 4.4 & 4.4 \\
+2.00E-03 & 5.4 & 5.5 \\
+1.00E-03 & 5.6 & 7.0 \\ \hline
+\end{tabular}
+\end{table}
+
+また、$\rho=1, 2, 4, 8$ を半径としてもつ切り欠き付き試験片における光弾性画像は以下のようになった。
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ρ=1.JPG}
+        \caption{$\rho=1$}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ρ=2.JPG}
+        \caption{$\rho=2$}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ρ=4.JPG}
+        \caption{$\rho=4$}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ρ=8.JPG}
+        \caption{$\rho=8$}
+    \end{minipage}
+\end{figure}
+
+このときの応力集中係数 $K$ は以下のような式となるため、
+\[
+  K = \frac{\sigma_{x,p}}{\sigma_{x,\text{nom}}}
+\]
+テキスト(1-23)式 $N_{\text{max}}=3CWe/\lambda h^2$ を用いると、$K$ の式は $N_{\text{max}}$ の比で以下のように表せられる。
+\[
+K = \frac{N_{\text{max, 切り欠きあり}}}{N_{\text{max, 切り欠きなし}}}
+\]
+
+$K(\text{下限})$ と $K(\text{上限})$ の値は以下のようになった。
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{lrrrrr}
+    \hline
+    切欠き半径 $\rho$ [m] & $K$(上限) & $K$(下限) & $K$(Peterson) & 誤差(上限) [\%] & 誤差(下限) [\%] \\ \hline
+    8.00E-03 & 1.524050 & 1.417721 & 1.33 & 14.590273 & 6.595602 \\
+    4.00E-03 & 1.559493 & 1.559493 & 1.60 & 2.531645 & 2.531645 \\
+    2.00E-03 & 1.949367 & 1.913924 & 2.00 & 2.531645 & 4.303797 \\
+    1.00E-03 & 2.481012 & 1.984810 & 2.39 & 3.808061 & 16.953551 \\ \hline
+    \end{tabular}
+    }
+\end{table}
+
+この結果を下図のPetersonの応力集中係数と比較すると以下の図のようになる。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{Peterson_compare.png}
+    \caption{実験結果とPetersonの応力集中係数との比較}
+\end{figure}
+
+\subsubsection*{課題3}
+有限要素法によってもとめた応力集中分布は以下図のようになった。
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{0mm_graph.png}
+        \caption{切り欠きなしにおける応力分布}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1mm_graph.png}
+        \caption{$\rho=1$における応力分布}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2mm_graph.png}
+        \caption{$\rho=2$における応力分布}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4mm_graph.png}
+        \caption{$\rho=4$における応力分布}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{8mm_graph.png}
+        \caption{$\rho=8$における応力分布}
+    \end{minipage}
+\end{figure}
+
+この時ピークの値を以下のように拡大して読みとった。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{先端の値(ρ=1).png}
+    \caption{$\rho=1$における応力分布のピーク拡大}
+\end{figure}
+
+このときピークの値から求めた $K$ 値、課題2から求める $K$ 値、Petersonの値は以下のようになった。
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lrrrr}
+\hline
+切欠き半径 $\rho$ [m] & $K$(上限\_課題2) & $K$(下限\_課題2) & $K$(課題3) & $K$(Peterson) \\ \hline
+8.00E-03 & 1.524051 & 1.417722 & 0.928 & 1.33 \\
+4.00E-03 & 1.559494 & 1.559494 & 1.286 & 1.60 \\
+2.00E-03 & 1.949367 & 1.913924 & 1.558 & 2.00 \\
+1.00E-03 & 2.481013 & 1.984810 & 1.553 & 2.39 \\ \hline
+\end{tabular}
+\end{table}
+
+このとき以下が作成したメッシュの画像である。
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ_0mm.png}
+        \caption{切り欠きなしにおけるメッシュ}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ_1mm.png}
+        \caption{$\rho=1$におけるメッシュ}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ_2mm.png}
+        \caption{$\rho=2$におけるメッシュ}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ_4mm.pdf}
+        \caption{$\rho=4$におけるメッシュ}
+    \end{minipage}
+
+    \vspace{5mm}
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ_8mm.png}
+        \caption{$\rho=8$におけるメッシュ}
+    \end{minipage}
+\end{figure}
 
 \subsection{考察}
 
-% ==================================================
-% まとめと参考文献
-% ==================================================
+\subsubsection*{課題1の考察}
+課題1における $C$ の値にはかなりの差があるといえる。この理由として以下のことが考えられる。
+\begin{enumerate}[label=\arabic*.]
+    \item 画像上では縞が幅をもってしまうため、正確な縞の位置を測定するのが難しいこと。
+    \item 中立面が梁の完全な中心とはなっていないこと。
+    \item 支点や荷重を加えるピン自体に大きさがあること。
+    \item 支点の三次元的なずれから3次元的な力が加わっている可能性があること。
+\end{enumerate}
+
+$e=2, W=4.5$ の光弾性画像と、$e=3, W=4.5$ の光弾性画像を比較すると、$e=3, W=4.5$ の条件においてより $N_{\text{max}}$ の値が大きくなっていることがわかる。また、$e=3, W=4.5$ の光弾性画像と $e=3, W=6.5$ の光弾性画像を比較すると、$e=3, W=6.5$ の条件においてより $N_{\text{max}}$ の値が大きくなっていることがわかる。これはテキスト(1-23)の $N_{\text{max}}=3CWe/\lambda h^2$ の公式より、$W, e$ が大きくなると $N_{\text{max}}$ が大きくなることより明らかである。
+
+また課題2における荷重条件を検討するにあたっては、以下の点を考慮した。
+\begin{enumerate}[label=\arabic*.]
+    \item 荷重が加わる点については縞模様が歪んでいるため、中心付近（つまり $e$ が大きい）で荷重が加わるのは好ましくない。
+    \item 一方で $e, W$ の値が小さい状態では $N_{\text{max}}$ に大きな誤差を含んでおり、好ましくない。
+    \item $e, W$ が大きすぎる場合、切り欠き部分に多くの重なりを含むため適切に値を読むことができない。
+\end{enumerate}
+これらのことを考慮した結果、$e=3, W=6.5$ を採用した。
+
+$e=3, W=4.5$ について暗視野と明視野を比較すると、それぞれの利点と問題点は以下のようになった。暗視野の利点は $N=0, 1, 2, \dots$ に縞が現れるため中心軸の位置が分かりやすい点である。一方で問題点としては、試験片の境界が暗いため端の値については正確な観測が難しい点があげられる。明視野の利点は、背景が明るいため試験片の端の縞が見やすい点である。問題点としては、本実験では中心軸が試験片の完全な中心ではないので $N=1/2$ を探すのがより難しくなっている。
+
+\subsubsection*{課題2の考察}
+この図から、切り欠きの半径 $\rho$ が小さくなるほど応力集中係数 $K$ が大きくなることが今回の実験から確認できた。
+
+一方で下限、上限ともに誤差が存在し、この実験の問題点として以下のことが挙げられる。中心軸が梁の中心ではなかったこと、および梁の切り欠きの境界においては縞が多く重なっており正確に読み取ることが難しかったことである。梁の切り欠きの境界において縞が多く重なっていたことによって、$\rho=1$ の大きな誤差が生まれたと考えられる。
+
+また今回の計算において、$N_{\text{max, 切り欠きなし}}$ は課題1の平均を用いており、同様の値を使っているため、以下の相対誤差の式が成り立つ。
+\[
+\frac{\Delta K}{K}=\frac{\Delta N_{\text{max}}}{N_{\text{max}}}
+\]
+よって $N_{\text{max}}$ がより小さいもの、つまり $\rho$ がより大きなもので相対誤差が大きくなったと考えられる。また中心軸については、4点の支持において変形に伴って外側に引っ張られる力が加わっていると考えられる。よって中立面は梁の中心より上にずれており、上の応力は減少し、下の応力は増加する。このことも $K$ の値について $K_{\text{上}} < K_{\text{下}}$ となっている原因と考えられる。
+
+課題1, 2において、実験の課題として以下のことが挙げられる。実験では縞模様の中心や数を主観的に判断したが、この縞次数の客観的な判断基準が必要である。また、4点の支持部分に関する摩擦を減らし、荷重のみが梁に加わるようにすることである。加えて、改善すべき解決策として、アプリケーションを用いて縞次数をピクセルの彩度などを解析することで客観的な基準で判別することや、4点の支持部分に油をさすなどし摩擦の影響を減らすことなどが挙げられる。
+
+\subsubsection*{課題3の考察}
+まず、メッシュ作成時の要素の細かさが結果に及ぼす影響を考察する。以下は切り欠きなしの梁に応力を加えた際の、メッシュが中程度と細かいものの図である。
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ中程度.png}
+        \caption{$\rho=1$における応力分布（中程度）}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ細かい.png}
+        \caption{$\rho=1$における応力分布（細かい）}
+    \end{minipage}
+\end{figure}
+
+このとき、メッシュが細かいものについては応力が最大となる4点の支点部分が中程度のものよりも赤く、ピークがより鮮明に表されていることが分かる。一方、中程度のものでは最大応力がぼやけて分散されていることが分かる。これはメッシュを大きくすることによって、応力がより大きいグリッド内で平均化されることによって起こると考えられる。これにより、メッシュを大きくするにつれて有限要素解析によって求められる最大応力が小さくなってしまい、結果としてより小さい $K$ の値となってしまうと考えられる。
+
+いま課題3における $K$ の値と近似によって求められる $K$ を比較すると、課題3における $K$ の値が近似での値と比較して小さくなっていることが分かる。これは有限要素解析において、メッシュ単位で応力が平均化されることで最大応力が実際の値よりも小さくなってしまっているためと考えられる。
+
+このとき、課題3で得られた梁の応力分布を課題2における縞模様と比較する。いま $\rho=1$ における課題2の光弾性画像と、課題3における有限要素法によって出力した画像はそれぞれ以下のようになる。
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ρ=1.jpg}
+        \caption{$\rho=1$における応力分布（実験）}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{メッシュ_1mm.png}
+        \caption{$\rho=1$における応力分布（解析）}
+    \end{minipage}
+\end{figure}
+
+この2つの画像について、どちらも切り欠きの部分で最大の応力が加わっていることが分かる。一方で、課題2の光弾性画像については縞次数のみを観測することができるのに対し、有限要素法のシミュレーションについては応力分布として連続な分布を観測できる。しかし、課題2の光弾性画像のみが現実の摩擦などの条件を含んでおり、有限要素法についてはメッシュの大きさの影響を強く受けることを考慮すると、実際の光弾性画像がより正しい応力の分布を表しているといえる。
+
 \section{総括}
-本実験を通して、光弾性法および超音波計測を用いた固体力学の評価手法について...
+本実験を通して、光弾性法を用いた応力場の評価手法について、その理論と実際のデータとの比較を行った。
 
 \section*{参考文献}
 \begin{enumerate}[label={[\arabic*]}]
-    \item 著者名, 『書籍名』, 出版社, 発行年.
     \item 物理工学科 実験指導書, 2026.
 \end{enumerate}
 
